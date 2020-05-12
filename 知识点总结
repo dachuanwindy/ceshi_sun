@@ -1,0 +1,19 @@
+链表知识点总结：
+分类： 单向链表，
+       双向链表，
+       双端链表;
+
+技术实现：
+1 Node 类  包括：string value, Node next; 就可以了
+2
+   linkedList{
+      private Node first;
+
+          public Linked() {
+              first = null;
+          }
+
+      public void  insertData(){
+           Node  node = new Node();
+      }
+  }

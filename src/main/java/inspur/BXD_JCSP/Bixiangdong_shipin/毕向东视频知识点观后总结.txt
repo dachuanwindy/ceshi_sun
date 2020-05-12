@@ -1,0 +1,86 @@
+面向对象---任何东西都是对象 Object object = new Object() 类文件.class 是对象， person 是对象，文件是对象，车是对象，人是对象，
+接下来要对对象写 属性（标签，静态的属性） 和行为（动态属性，能干啥 ，有啥功能）
+对象的三大特征：封装，继承，多态
+
+封装：就是对对象的属性私有化，只想外提供接口；
+     好处： 降低耦合性， 类内部可以自由修改， 可以对内部成员进行精准控制， 保证数据的安全性；
+
+继承：对一类事物特性的集成 extends
+     好处：提高了代码的复用性；
+     子类拥有父类非private的属性和方法
+     子类可以添加自己的方法和属性，即对父类进行扩展
+     子类可以重新定义父类的方法，即多态里面的覆盖，后面会详述【重写==覆盖就是对父类方法的重写，方法名字要相同】
+
+ 多态：就是同一事物的不同表现形式：构造函数、重载就是多态的一种表现形式【重载就是方法名字相同，但是参数不同】
+      重写：用在实现接口里面，对方法进行重写【原则是：方法名字相同，参数相同，】
+
+ wait(), toString(), equals(), hashcode(),notify()----->> 对象中常用的方法，其中一个equal(),对函数equal方法进行重写，
+
+class person{
+int a ;
+ void play(){}
+
+ void study(){}
+}
+
+class类是对象的载体，当对类进行实例化后就是该类的对象了。 new Person();
+
+
+class person{
+  private string name ;
+  private string age;
+  private string shenfenzhenghao //身份证号码
+
+  public string  getname(){
+ return name；
+   }
+   public stirng setname (){
+   this.name= name ;}
+}
+
+
+
+
+模版模式介绍：
+这种模式，首先对共用的方法进行编写，然后对不确定的方法进行抽象，这就是模版方法，
+举例说明：统计程序运行时间这个类，对抽象方法然后编写，
+
+abstract A {
+
+  public final GETtime(){
+
+  long  start_time =system.concurrent.time;
+
+     method_1();
+  long endtime - system.cocucurenttine
+
+  }
+
+ abstract void mothed();
+
+}
+
+ class B extends A{
+@overide
+
+void mothd_1(){
+ // 运行程序的方法，例如跑到for 循环
+
+}
+
+Testmain{
+
+    public static void mian(){
+
+    B b =new B ();
+
+    b.Gettime();// 这里的要调用子类的方法，父类方法没重写就调用父类方法；
+
+    }
+
+}
+
+
+
+
+ }

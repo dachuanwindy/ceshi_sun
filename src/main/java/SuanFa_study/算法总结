@@ -1,0 +1,21 @@
+算法总结：
+
+数据结构只要分为： 数组  链表  队列  哈希表（散列）   树  位图
+
+队列基本实现是：
+队列里的第一个数： front
+队列里元素总个数： elements
+                最新插入的数  end;
+初始化数组，接下来就是：
+
+
+
+链表：    Node { string value ;  Node next }
+双向链表: Node{ string value ; Node next ; Node previous; };
+双端链表：
+
+散列 ： Info{ string key ; string value };
+开放地址法： 增加地址，存放数据，
+ 链地址法： 增加链表，实现数据hash冲突；
+
+HashTable{};

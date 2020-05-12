@@ -1,0 +1,30 @@
+装饰模式;
+
+从mian 函数来看，变量还会对象还是原来那个对象，只是进行了 MilK() 和 MOKA() 的修饰；
+     Beverage beverage = new Coffe();
+        beverage = new Milk(beverage);
+        beverage= new Moka(beverage);
+        System.out.println(beverage.description());
+
+输出结果： 咖啡实现加了牛奶加了摩卡
+
+技术实现思想：
+
+interface beverage{
+  method1();
+  method2();
+}
+
+Coffee implements beverage{}
+Coffee2 implements beverage{}
+
+Deractor implemts{} // 装饰类，这个只是承接作用；
+
+Milk extends Deractor{
+
+MilK(beverage beverage){ this.beverage=beverage} // 构造方法初始化，这样就能传入 饮料这个对象；
+
+ 重写method 方法，增加新功能； 然后这就可以装饰了，
+}
+
+收工<<<<<

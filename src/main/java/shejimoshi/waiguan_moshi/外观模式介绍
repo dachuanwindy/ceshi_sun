@@ -1,0 +1,33 @@
+外观模式：
+为什么要 使用外观模式？
+当客户端调用多个相类似的子类的时候，就会产生过多的耦合，
+
+
+电脑{open(); colose();}
+电灯{open(); colose();}
+冰箱{open(); colose();}
+空调{open(); colose();}
+
+waiguan.class{
+
+ private 电脑 diannao;
+ private 点灯 diannao;
+ private 冰箱 diannao;
+ private 空调 diannao;
+
+ public open(){
+        diannao.open();
+        diandeng.open();
+        bingixang.open();
+ }
+    public close(){
+        diannao.close();
+        diandeng.close();
+        bingixang.close();
+   }
+}
+
+
+外观模式是建立一个新类waiguan.class{}, 然后将各个子类集成进去，这样就能保证调用者client，就只和
+waiguan.class{};进行调用，减少了耦合;
+ 缺点是：灵活性有些差

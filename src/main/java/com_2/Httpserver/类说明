@@ -1,0 +1,4 @@
+
+httpserver 其实就是解析http请求的；
+
+Nginx 是http服务器就是说能解析http请求并根据请求再去做 负载均衡处理；

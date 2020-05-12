@@ -1,0 +1,44 @@
+NIO 学习记录：
+
+
+
+NIO主要有三个关键的地方
+    |--Buffer
+        |--bytebuffer
+        |--intbuffer
+        |--charbuffer
+        |--.....
+            |--关键字：
+            |-- get(); // 获取数据，一般是byte [] 数组获取
+            |-- put(); // 存放数据，
+            |-- flip(); // buffer 可读可写，切换状态
+            |-- position(); //当前在数组中的位置
+            |-- limit();// buffer 内部是一个数字，限制buffer的大小
+            |--buffer.allocate(1023); // 给buffer 分配空间
+
+
+    |--channel
+       |--filechannel  //主要针对文件的
+        以下主要是针对网络的
+       |--socketchannel
+       |--serversocketchannnel
+       |--datagramchannel
+
+    //核心思想就在这，提高了效率，原来都是堵塞模式，
+    |--selector
+     关键字:
+     selector.open(); 打开选择器；
+     serversocketchannel.register(selector,SelectorKeys.accept);// 将socket通道注册到选择器上
+
+     //
+     Iterator<SelecteKey> it = selector.selectorkeys().iterator(); //这个是将注册的key进行遍历；
+
+
+     if(it.isaccesible){
+       // 这里需要将可读的key 注册到selector中去。
+     }
+     else if(it.isreadable){
+      // 读取数据
+     }
+     //
+     it.remove(); //这一步是绝对不能忘的。

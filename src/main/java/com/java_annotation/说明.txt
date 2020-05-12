@@ -1,0 +1,22 @@
+如何去实现：
+第一步： 创建一个接口@interface TestA{}
+
+第二步：写接口上的注解：
+@Target(ElementType.TYPE)  // 这个参数可以是包，类、方法、变量、函数
+@Retention(RetentionPolicy.RUNTIME) // 这个对象是
+ @Documented 将此注解包含在 javadoc 中 ，它代表着此注解会被javadoc工具提取成文档。在doc文档中的内容会因为此注解的信息内容不同而不同。相当与@see,@param 等。
+ @Inherited 允许子类继承父类中的注解。
+
+这样一个注解接口就实现了，该如何使用呢？
+第三步： 在方法上或者类上使用注解: 注解中可能需要一些必要的参数，必须写明：
+@TestA(name = "ceshi", Gid = Long.class, id = 9)
+public class Test2 {
+
+    public String test;
+    @TestA(name = "public.method", Gid = long.class, id = 1)
+    public void ceshiMehtod() {
+    }
+}
+
+测试我们写的注解：
+

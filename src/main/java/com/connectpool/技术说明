@@ -1,0 +1,18 @@
+
+
+
+
+连接池首先包括：
+
+
+
+
+1.接口pool 最起码要包括这些部分吧
+
+   初始化连接池；initpool;
+
+   获取连接；jedisborrow();
+
+   释放连接；releasepool();
+
+   关闭连接； close();
