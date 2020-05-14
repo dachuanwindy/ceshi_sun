@@ -15,6 +15,7 @@ public class ClassLoadStd {
     public static void main(String[] args) {
         // 根加载器,最顶层对象是根加载器
         Object o = new Object();
+        new Object().getClass();
         ClassLoader classLoader = o.getClass().getClassLoader();
 //        System.out.println(classLoader.toString());
 

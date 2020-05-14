@@ -46,5 +46,6 @@ public class AsmTest {
         FileOutputStream fout = new FileOutputStream(file);
         fout.write(data);
         fout.close();
+
     }
 }
