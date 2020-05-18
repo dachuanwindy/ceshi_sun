@@ -22,7 +22,9 @@ public class Client {
     }
     //向服务器发送消息
     public static boolean sendMsg(String msg) throws Exception{
-        if(msg.equals("q")) return false;
+        if(msg.equals("q")) {
+            return false;
+        }
         clientHandle.sendMsg(msg);
         return true;
     }

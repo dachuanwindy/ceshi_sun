@@ -28,8 +28,11 @@ public class ThreadpoolExecutors {
         for (int i = 0; i < 50; i++) {
             executor.execute(new Worker());
         }
-        executor.shutdown();
-    }
+
+        CompletableFuture future = new CompletableFuture();
+
+        future.join();
+     }
 
 }
 

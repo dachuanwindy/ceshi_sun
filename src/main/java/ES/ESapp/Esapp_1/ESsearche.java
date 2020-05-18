@@ -13,5 +13,7 @@ public class ESsearche {
         Class<?> aClass = Class.forName("inspur.fanshe.testclass.Student");
 
         Class<?>[] interfaces = aClass.getInterfaces();
+
+        System.out.println(interfaces);
     }
 }
