@@ -1,5 +1,6 @@
 package com.NIO.BIO_1.AIO_client;
 
+
 import java.io.IOException;
 import java.net.Socket;
 
@@ -15,9 +16,11 @@ public class BIO_client {
     private static int aa;
 
     public static void main(String[] args) throws IOException {
-
+        byte[] bytes = new byte[1024];
         Socket socket = new Socket(default_host, default_port);
         socket.getOutputStream().write("孙风川".getBytes());
+        socket.getInputStream().read(bytes);
+        System.out.println(new String(bytes));
         socket.close();
     }
 

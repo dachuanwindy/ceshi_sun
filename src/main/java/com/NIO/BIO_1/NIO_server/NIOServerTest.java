@@ -16,7 +16,7 @@ import java.util.Set;
  * @version V1.0
  * @Description: NIO 具体实现
  *
- * Reactor模型: 当来个一个连接,就让
+ * Reactor模型: 当来个一个连接 : selector 选择器,把所有的channel 都注册到这个里面来,然后监听有数据的channel 然后处理,
  * @date 2020/5/17 20:26
  */
 public class NIOServerTest {

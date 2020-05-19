@@ -8,7 +8,6 @@ public class Student implements Serializable {
     private int age;
     private char sex;
 
-
     public Student() {
     }
 
@@ -42,6 +41,5 @@ public class Student implements Serializable {
     public void setSex(char sex) {
         this.sex = sex;
     }
-
 
 }

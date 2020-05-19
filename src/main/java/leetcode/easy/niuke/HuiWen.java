@@ -3,7 +3,7 @@ package leetcode.easy.niuke;
 /**
  * @author sunfch
  * @version V1.0
- * @Description: 回文功能
+ * @Description: 回文功能 : 最大回文子字符串
  * @date 2020/5/13 10:55
  */
 public class HuiWen {

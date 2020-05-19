@@ -1,4 +1,4 @@
-package inspur.quatiz_study;
+package inspur.quartz.quatiz_study;
 
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;

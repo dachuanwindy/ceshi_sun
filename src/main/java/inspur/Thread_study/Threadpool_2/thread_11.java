@@ -1,8 +1,8 @@
-package inspur.Threadpool_2;
+package inspur.Thread_study.Threadpool_2;
 
 import java.util.concurrent.locks.LockSupport;
 
-public class LocksupportExmaple {
+public class thread_11 {
     public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {
             System.out.println("!!!!");
@@ -17,7 +17,7 @@ public class LocksupportExmaple {
 }
 
 
-class welcomettast1 implements Runnable {
+class welcomettast implements Runnable {
     @Override
     public void run() {
         LockSupport.park();

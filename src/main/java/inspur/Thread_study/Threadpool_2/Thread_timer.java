@@ -1,4 +1,4 @@
-package inspur.Threadpool_2;
+package inspur.Thread_study.Threadpool_2;
 
 import java.util.ArrayList;
 import java.util.concurrent.*;

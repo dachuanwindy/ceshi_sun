@@ -1,4 +1,4 @@
-package inspur.quatiz_study;
+package inspur.quartz.quatiz_study;
 
 import org.quartz.Job;
 import org.quartz.JobDataMap;
