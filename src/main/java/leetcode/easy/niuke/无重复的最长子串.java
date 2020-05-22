@@ -1,5 +1,7 @@
 package leetcode.easy.niuke;
 
+import java.util.HashSet;
+
 /**
  * @author sunfch
  * @version V1.0
@@ -8,8 +10,30 @@ package leetcode.easy.niuke;
  */
 public class 无重复的最长子串 {
 
-
     public static void main(String[] args) {
-        System.out.println("");
+
+        String method = method();
+        System.out.println(method);
+    }
+
+    public static String method() {
+        String str = "abcdeafghigl";
+
+        // 首先拿到整个字符串
+        for (int i = str.length(); i > 0; i--) {
+            for (int j = 1; j <= str.length() - i; j++) {
+                String sub = str.substring(j, i + j);
+                char[] chars = sub.toCharArray();
+                HashSet<Character> characters = new HashSet<>();
+                for (char c : chars) {
+                    characters.add(c);
+                }
+                if (characters.size() == sub.length()) {
+                    return sub;
+                }
+            }
+        }
+
+        return null;
     }
 }
