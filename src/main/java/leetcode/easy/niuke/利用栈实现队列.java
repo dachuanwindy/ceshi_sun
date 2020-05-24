@@ -8,7 +8,7 @@ import java.util.Stack;
  * @Description: 用栈实现对列====<这个地方必须用到两个对列
  * @date 2020/3/24 15:19
  */
-public class Stack2Queue {
+public class 利用栈实现队列 {
 
     private Stack<String> stackA = new Stack<>();
     private Stack<String> stackB = new Stack<>();

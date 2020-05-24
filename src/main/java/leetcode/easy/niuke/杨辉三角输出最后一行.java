@@ -1,7 +1,6 @@
 package leetcode.easy.niuke;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -10,8 +9,7 @@ import java.util.List;
  * @Description: 杨辉三角输出最后一行 这个用数组输出
  * @date 2020/3/29 11:47
  */
-public class YangHui {
-
+public class 杨辉三角输出最后一行 {
 
     public static void main(String[] args) {
         System.out.println("=======");

@@ -1,7 +1,6 @@
 package leetcode.easy.niuke;
 
 import lombok.Data;
-import sun.jvm.hotspot.jdi.VoidValueImpl;
 
 /**
  * @author sunfch
@@ -13,9 +12,8 @@ public class 链表相加 {
 
     public static void main(String[] args) throws Exception {
         System.out.println("===两个链表相加===");
-
         Node l1 = new Node(5);
-        l1.next=new Node(1);
+        l1.next = new Node(1);
         Node l2 = new Node(7);
 
         Node add = add(l1, l2);
@@ -49,9 +47,8 @@ class Node {
     Node next;
 
     Node(int value) throws Exception {
-        if(value>9){
-
-        throw  new  Exception("不能大于9 ");
+        if (value > 9) {
+            throw new Exception("不能大于9 ");
         }
         this.value = value;
     }
