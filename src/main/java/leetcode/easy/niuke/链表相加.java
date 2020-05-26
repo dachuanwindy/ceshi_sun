@@ -46,10 +46,8 @@ class Node {
     int value;
     Node next;
 
-    Node(int value) throws Exception {
-        if (value > 9) {
-            throw new Exception("不能大于9 ");
-        }
+    Node(int value)  {
+
         this.value = value;
     }
 }
