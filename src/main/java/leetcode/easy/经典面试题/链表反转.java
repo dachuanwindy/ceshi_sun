@@ -17,7 +17,7 @@ public class 链表反转 {
 
         //Node node1 = reverseNode(node);
 
-        Node node2 = reverseDigui(node);
+        Node node2 = reverseDiGui(node);
         System.out.println(node2);
     }
 
@@ -48,14 +48,20 @@ public class 链表反转 {
 
     }
 
-    public static Node reverseDigui(Node l1) {
+    /**
+     * description: 递归实现
+     *
+     * @param l1
+     * @return leetcode.easy.经典面试题.Node
+     */
+    public static Node reverseDiGui(Node l1) {
 
         if (l1.next == null) {
             return l1;
         }
         Node next = l1.next;
         l1.next = null;
-        Node pre = reverseDigui(next);
+        Node pre = reverseDiGui(next);
         next.next = l1;
         return pre;
 
