@@ -197,25 +197,41 @@ class Single {
 class Singlee {
 
     //
-    private static Singlee s = null;
+    private volatile static Singlee s = null;
 
     private Singlee() {
     }
 
     public static Singlee getInstance() {
-
         if (s == null) {
             synchronized (Singlee.class) {
                 if (s == null) {
-
                     s = new Singlee();
                 }
-
             }
-
         }
-
         return s;
     }
+}
 
+
+/**
+ * @author sunfch
+ * @description: 内部静态类实现单例模式
+ * 内部静态类的好处是: 1.内部类只有在调用的时候,才会装载然后初始化;
+ *
+ * 整个加载过程:
+ * 1.装载的时候,只是想class文件信息装载到了方法区,没有做任何事情.
+ * @date 2020/5/30 13:05
+ */
+class SingleTonA {
+    private SingleTonA() {
+    }
+    private static class SingleTonHolder {
+        private static SingleTonA singleTonA = new SingleTonA();
+    }
+
+    public static SingleTonA getInstance() {
+        return SingleTonHolder.singleTonA;
+    }
 }

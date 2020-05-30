@@ -18,8 +18,23 @@ public class 反转K个链表 {
      * @return leetcode.easy.经典面试题.Node
      */
 
-    public static Node method(Node l1) {
+    public static Node method(Node l1, int k) {
+        // 若小于等于1 输出原链表
+        if (k <= 1) {
+            return l1;
+        }
 
+        Node current = l1;
+        Node root = new Node(0);
+
+        int count = 0;
+        while (current != null) {
+            for (int i = 0; i < k; i++) {
+                count++;
+            }
+
+
+        }
         return null;
     }
 }
