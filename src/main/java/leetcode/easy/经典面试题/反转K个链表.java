@@ -9,6 +9,17 @@ package leetcode.easy.经典面试题;
 public class 反转K个链表 {
     public static void main(String[] args) {
         System.out.println("实现链表中k个元素反转");
+
+        Node node = new Node(1);
+        node.next = new Node(2);
+        node.next.next = new Node(3);
+        node.next.next.next = new Node(4);
+      //  Node nodeTest = reverse(node);
+      //  System.out.println(nodeTest);
+
+        Node method = method(node, 4);
+        System.out.println(method);
+
     }
 
     /**
@@ -20,21 +31,34 @@ public class 反转K个链表 {
 
     public static Node method(Node l1, int k) {
         // 若小于等于1 输出原链表
-        if (k <= 1) {
+        Node temp = l1;
+        for (int i = 0; i < k && temp != null; i++) {
+            temp = temp.next;
+        }
+        if (temp == null) {
             return l1;
         }
 
-        Node current = l1;
-        Node root = new Node(0);
+        Node t2 = temp.next;
+        temp.next = null;
 
-        int count = 0;
-        while (current != null) {
-            for (int i = 0; i < k; i++) {
-                count++;
-            }
+        Node newHead = reverse(l1);
+        Node newtemp = method(t2, k);
+        l1.next = newtemp;
+        return newHead;
 
 
+    }
+
+    //递归实现链表反转
+    static Node reverse(Node node) {
+        if (node == null || node.next == null) {
+            return node;
         }
-        return null;
+        Node reverse = reverse(node.next);
+        node.next.next = node;
+        node.next = null;
+        return reverse;
+
     }
 }

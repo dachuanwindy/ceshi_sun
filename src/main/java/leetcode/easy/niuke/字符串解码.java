@@ -34,7 +34,6 @@ public class 字符串解码 {
 
             } else if (c >= '0' && c <= '9') {
 
-
             } else {
                 res.append(c);
             }

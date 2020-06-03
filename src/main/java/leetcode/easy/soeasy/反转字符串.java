@@ -20,4 +20,5 @@ public class 反转字符串 {
         }
         return str.substring(k + 1, str.length()) + str.substring(0, k);
     }
+
 }
