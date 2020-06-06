@@ -9,7 +9,7 @@ package leetcode.mid;
 public class 平方根 {
     public static void main(String[] args) {
 
-        int sqr = sqr(8);
+        int sqr = sqr(19);
         System.out.println(sqr);
     }
 
@@ -25,7 +25,7 @@ public class 平方根 {
             int result = i * i;
 
             if ((result - x) == 0) {
-
+                return i;
             }
             if ((result - x) > 0) {
                 return i - 1;

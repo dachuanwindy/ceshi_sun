@@ -9,7 +9,7 @@ package leetcode.easy.niuke;
 public class HuiWen {
 
     public static void main(String[] args) {
-//        最长回文
+        //最长回文
         String str = longestPalindrome("aaabaaabbbb");
         System.out.println(str);
     }

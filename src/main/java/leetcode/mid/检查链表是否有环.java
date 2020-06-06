@@ -14,30 +14,53 @@ public class 检查链表是否有环 {
         node.next = new Node(2);
         node.next.next = new Node(3);
         node.next.next.next = new Node(4);
-          node.next.next.next.next = node;
-        boolean method = method(node);
-        System.out.println(method);
+        node.next.next.next.next = new Node(5);
+        node.next.next.next.next.next = new Node(7);
+        node.next.next.next.next.next.next = new Node(9);
+        node.next.next.next.next.next.next.next = node.next;
+        Node method = method(node);
+        System.out.println(method.value);
     }
 
-    public static boolean method(Node l1) {
+    static int id = 1;
+
+    public static Node method(Node l1) {
 
         if (l1 == null || l1.next == null) {
-            return false;
+            return l1;
         }
         Node now = l1;
-        Node fast = null;
-        Node slow = fast = l1;
+        Node slow = l1, fast = l1;
         while (fast != null || fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-            if (slow.value == fast.value) {
-                System.out.println("循环了...");
-                return true;
+            //相等是在某个地方相遇了,下次再相遇,就是环的长度了;
+            while (fast == slow) {
+                int len = 1;
+                fast = fast.next.next;
+                slow = slow.next;
+                while (fast != slow) {
+                    len++;
+                    fast = fast.next.next;
+                    slow = slow.next;
+                }
+                System.out.println("The length of circle is:" + len);
+                //输出环入口节点
+                //相等之后,fast
+                fast = l1;
+                while (fast != slow) {
+                    fast = fast.next;
+                    slow = slow.next;
+                    id++;
+                }
+                return slow;
             }
-            System.out.println("没有环状=");
         }
-        return false;
+        return l1;
     }
+
+    //自己再实现链表环判断及
+
 }
 
 class Node {
