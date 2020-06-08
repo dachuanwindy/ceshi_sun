@@ -17,7 +17,7 @@ public class 链表反转 {
 
         //Node node1 = reverseNode(node);
 
-        Node node2 = reverseDiGui(node);
+        Node node2 = revDiGui(node);
         System.out.println(node2);
     }
 
@@ -33,11 +33,11 @@ public class 链表反转 {
         }
 
         // 1-->2-->3-->4
-        Node pre = null;
-        Node now = l1;
+        Node pre = null, cur, next;
+        Node now = next = l1;
         while (now != null) {
             // next=2-->3-->4;
-            Node next = now.next;
+            next = now.next;
             //当前now=1 但是执行下面这行之后,now=1, now.next=null;// 这里把 now 单独拎出来了.
             now.next = pre;
             //执行这行之后,pre=1, pre.next=null;
@@ -64,7 +64,16 @@ public class 链表反转 {
         Node pre = reverseDiGui(next);
         next.next = l1;
         return pre;
+    }
 
+    public static Node revDiGui(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
 
+        Node last = revDiGui(head.next);
+        head.next.next = head;
+        head.next= null;
+        return last;
     }
 }

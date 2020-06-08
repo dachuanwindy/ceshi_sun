@@ -7,6 +7,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author sunfch
  * @version V1.0
  * @Description: 单数组接雨水
+ * <p>
+ * 这个是一个动态规划问题
  * @date 2020/6/5 08:17
  */
 public class 接雨水1 {
