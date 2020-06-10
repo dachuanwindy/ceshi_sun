@@ -16,7 +16,6 @@ public class 验证数组是否为前序输出 {
 
     public static boolean method() {
 
-
         return false;
     }
 

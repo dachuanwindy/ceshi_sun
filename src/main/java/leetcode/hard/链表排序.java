@@ -77,10 +77,7 @@ public class 链表排序 {
             h = h.next;
         }
         h.next = left != null ? left : right;
-
         return res.next;
-
-
     }
 
 

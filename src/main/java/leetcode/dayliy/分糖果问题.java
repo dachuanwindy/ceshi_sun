@@ -1,7 +1,5 @@
 package leetcode.dayliy;
 
-import sun.security.krb5.KdcComm;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +9,7 @@ import java.util.List;
  * @Description: 每日一练 :
  * @date 2020/6/1 20:46
  */
-public class Test21 {
+public class 分糖果问题 {
 
     public static void main(String[] args) {
 

@@ -32,16 +32,11 @@ public class 反转链表III {
         node.next.next.next.next = new Node(9);
         node.next.next.next.next.next = new Node(11);
 
-
         //Node node1 = reversGroup(node, 2);
         //System.out.println(node1);
-
         // 两两反转
-
         Node node1 = method3(node);
         System.out.println(node1);
-
-
     }
 
     //实现反转
@@ -78,7 +73,7 @@ public class 反转链表III {
 
 
     /**
-     * @description: 这个是LeetCode的题, 两个反转  z
+     * @description: 这个是LeetCode的题, 两个反转
      * 1-2-3-4-5->null 转化后 2-1-4-3-5->null;
      * <p>
      * newHead = head.next;
@@ -97,5 +92,4 @@ public class 反转链表III {
         newHead.next = head;
         return newHead;
     }
-
 }

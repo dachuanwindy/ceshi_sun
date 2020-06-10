@@ -14,7 +14,7 @@ public class 背包问题 {
     }
 
     /**
-     * @description: 动态规划,  0-1 问题往往都会用到栈;
+     * @description: 动态规划;
      * @author sunfch
      * @date 2020/6/8 08:01
      */
@@ -25,9 +25,7 @@ public class 背包问题 {
         //第一个元素是重量,
         dp[0][0] = 0;
         for (int i = 0; i <= weight.length; i++) {
-
             for (int j = 0; j <= val.length; j++) {
-
                 if(j-weight[i]<0){
                 dp[i][j]= dp[i-1][j];
                 }
