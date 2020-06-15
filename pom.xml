@@ -44,7 +44,7 @@
         <sdr.version>1.7.11.RELEASE</sdr.version>
         <cxf.version>3.0.10</cxf.version>
         <httpclient.version>4.5.2</httpclient.version>
-        <spring.security.version>3.2.10.RELEASE</spring.security.version>
+        <spring.security.version>5.3.3.RELEASE</spring.security.version>
         <spring.security.oauth2.version>2.1.1.RELEASE</spring.security.oauth2.version>
     </properties>
 
