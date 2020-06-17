@@ -27,9 +27,7 @@ public class Stack {
         top = -1;
     }
 
-    public void push(String value) {
-        arr[++top] = value;
-    }
+
 
     public  String pop(){
         return  arr[top--];

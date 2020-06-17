@@ -1,7 +1,5 @@
 package inspur.JVMTst;
 
-import org.apache.activemq.util.Suspendable;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -10,6 +8,7 @@ import java.util.*;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class JVMtest {
 
@@ -114,13 +113,13 @@ class Threadlocaltest {
 
 
     public static void main(String[] args) throws Exception {
-        ThreadLocal<String> threadLocal = new ThreadLocal<>();
+        ThreadLocal<Map<String, String>> threadLocal = new ThreadLocal<>();
 
         new Thread(new Runnable() {
             @Override
             public void run() {
-                threadLocal.set("sunfengchuan");
-
+                Map<String, String> objectObjectHashMap = new HashMap<>();
+                threadLocal.set(objectObjectHashMap);
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
@@ -134,7 +133,8 @@ class Threadlocaltest {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                threadLocal.set("dongxiaoming");
+                HashMap<String, String> map = new HashMap<>();
+                threadLocal.set(map);
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
@@ -143,6 +143,18 @@ class Threadlocaltest {
                 System.out.println("current-thread" + Thread.currentThread().getName() + threadLocal.get());
             }
         }).start();
+
+        threadLocal.get();
+
+        ArrayList<String> list = new ArrayList<>();
+
+        list.add("dfdfdfad");
+
+
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("fdfda");
+
+        linkedList.removeFirst();
 
 
     }
@@ -366,6 +378,14 @@ class ReentrantLocktest {
         lock.isFair();
 
         lock.unlock();
+
+
+        ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
+        readWriteLock.readLock();
+        readWriteLock.writeLock();
+
+
+
     }
 }
 
@@ -406,14 +426,14 @@ class test2 {
 //        new Thread(new a(true)).start();
 //        new Thread(new a(false)).start();
         WeakReference<Object> objectWeakReference = new WeakReference<Object>(new Object());
-        System.out.println( objectWeakReference.get());
-                ;
+        System.out.println(objectWeakReference.get());
+        ;
         System.gc();
 
         System.out.println(objectWeakReference.get());
 
 
-        CountDownLatch countDownLatch =new CountDownLatch(12);
+        CountDownLatch countDownLatch = new CountDownLatch(12);
 
         countDownLatch.await();
 
