@@ -8,6 +8,8 @@ package SuanFa_study;
 public class Digui_Test {
     public static void main(String[] args) {
           Digui(10);
+        int max = Math.max(2, 3);
+        // 间隙锁.....---->
     }
 
     public static void Digui(int a) {

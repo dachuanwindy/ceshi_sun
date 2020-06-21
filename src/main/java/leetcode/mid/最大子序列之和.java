@@ -26,9 +26,9 @@ public class 最大子序列之和 {
         if (nums.length == 0) {
             return 0;
         }
-
         //定义动态规划的初始
         int[] dp = new int[nums.length + 1];
+        //初始值判定
         dp[0] = nums[0];
         for (int i = 1; i < nums.length; i++) {
             //动态转移方程,这个题关键;

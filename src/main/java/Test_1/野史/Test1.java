@@ -5,11 +5,13 @@ import com.googlecode.aviator.Expression;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author sunfch
  * @version V1.0
- * @Description: TODO
+ * @Description:
  * @date 2020/6/1 19:34
  */
 public class Test1 {
@@ -43,6 +45,24 @@ public class Test1 {
         // 执行表达式
         Boolean result = (Boolean) compiledExp.execute(env);
         System.out.println(result);  // false
+
+        ConcurrentHashMap<Object, Object> map = new ConcurrentHashMap<>();
+
+        map.put("aa.", "aaaag");
+
+
+        ReentrantLock lock = new ReentrantLock();
+        lock.lock();
+
+        try {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
+
+
     }
 
 

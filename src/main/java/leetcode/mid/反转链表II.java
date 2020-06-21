@@ -35,6 +35,8 @@ public class 反转链表II {
     // 4,5,7,9
     static Node successor = null;
 
+
+    //reverse 前n个
     public static Node reverseN(Node head, int n) {
         if (n == 1) {
             successor = head.next;

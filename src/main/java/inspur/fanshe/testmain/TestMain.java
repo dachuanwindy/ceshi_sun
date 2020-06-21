@@ -31,9 +31,8 @@ public class TestMain {
 //        for (Constructor c : constructor) {
 //            System.out.println(c);
 //        }
-
-
 //        方式三 通过class.forname();
+
 
         try {
             Class clazz3 = Class.forName("inspur.fanshe.testclass.Student");
@@ -42,7 +41,6 @@ public class TestMain {
                 System.out.println("输出" + constructor1[i]);
             }
 
-
             constructor1 = clazz3.getDeclaredConstructors();
             for (Constructor con : constructor1) {
                 System.out.println("输出声明的方法===》" + con);
@@ -50,7 +48,6 @@ public class TestMain {
             System.out.println("获取无参构造函数");
             Constructor con1 = clazz3.getConstructor(null);
             con1.newInstance();
-
 
             System.out.println("获取有参数构造函数名调用=============");
             Constructor con2 = clazz3.getConstructor(String.class);

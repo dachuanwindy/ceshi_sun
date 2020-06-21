@@ -35,8 +35,13 @@ public class 反转链表III {
         //Node node1 = reversGroup(node, 2);
         //System.out.println(node1);
         // 两两反转
-        Node node1 = method3(node);
-        System.out.println(node1);
+        //  Node node1 = method3(node);
+        // System.out.println(node1);
+
+
+        // 反转整个链表
+        Node node2 = reverseAllLink(node);
+        System.out.println(node2);
     }
 
     //实现反转
@@ -92,4 +97,35 @@ public class 反转链表III {
         newHead.next = head;
         return newHead;
     }
+
+    /**
+     * @descrption: 实现两两反转
+     * @author sunfch
+     * @date 2020/6/20 06:05
+     */
+    public static Node revers2(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node newHead = head.next;
+        head.next = revers2(head.next.next);
+        newHead.next = head;
+        return newHead;
+    }
+
+    /**
+     * @description: 反转整个链表
+     * @author sunfch
+     * @date 2020/6/20 06:16
+     */
+    public static Node reverseAllLink(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        head.next = reverseAllLink(head.next);
+        head.next.next = head;
+        head.next = null;
+        return head;
+    }
+
 }

@@ -23,7 +23,7 @@ import java.util.Stack;
 public class BooleanCheck {
 
     public static void Main(String[] args) {
-        // TODO Auto-generated method stub
+
         Scanner scanner = new Scanner(System.in);
         String line = scanner.nextLine();
         String[] splits = line.split(" ");
