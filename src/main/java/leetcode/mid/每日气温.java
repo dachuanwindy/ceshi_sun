@@ -1,5 +1,7 @@
 package leetcode.mid;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -43,11 +45,10 @@ public class 每日气温 {
             return result;
         }
         Stack<Integer> stack = new Stack();
-        stack.push(-1);
         for (int i = 0; i < T.length; i++) {
-            while (stack.peek() != -1 && T[i] > T[stack.peek()]) {
+            while (!stack.isEmpty() && T[i] > T[stack.peek()]) {
                 int cur = stack.pop();
-                result[i] = i - cur;
+                result[cur] = i - cur;
             }
             stack.push(i);
         }
@@ -58,14 +59,12 @@ public class 每日气温 {
     //存放编号,然后编号相减,就是升温天数;
     public static int[] stackMethod(int[] arr) {
         int[] ints = new int[arr.length];
-        Stack<Integer> stack = new Stack<>();
-
+        Deque<Integer> stack = new LinkedList<>();
         //边界;
-        stack.push(-1);
-        for (int i = 0; i < arr.length; i++) {
-            while (stack.peek() != -1 && arr[i] > arr[stack.peek()]) {
+         for (int i = 0; i < arr.length; i++) {
+            while (!stack.isEmpty() && arr[i] > arr[stack.peek()]) {
                 int cur = stack.pop();
-                ints[i - 1] = i - cur;
+                ints[cur] = i - cur;
             }
             stack.push(i);
         }

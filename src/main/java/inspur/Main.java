@@ -2,7 +2,7 @@ package inspur;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.HashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author sunfch
@@ -11,11 +11,13 @@ import java.util.HashMap;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        HashMap<Object, Object> hashMap = new HashMap<>();
-        hashMap.put("", "");
-        testIsNotblank();
+//        HashMap<Object, Object> hashMap = new HashMap<>();
+//        hashMap.put("", "");
+//        testIsNotblank();
+
+
     }
 
     public static void testIsNotblank() {
@@ -25,5 +27,16 @@ public class Main {
         System.out.println(notEmpty);
         System.out.println(notBlank);
 
+        ReentrantLock reentrantLock = new ReentrantLock(true);
+
+        reentrantLock.lock();
+        try {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            reentrantLock.unlock();
+        }
     }
+
 }

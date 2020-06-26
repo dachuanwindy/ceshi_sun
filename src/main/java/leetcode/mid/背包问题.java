@@ -11,8 +11,6 @@ public class 背包问题 {
     public static void main(String[] args) {
         System.out.println("====");
 
-
-
     }
 
     /**
@@ -23,7 +21,6 @@ public class 背包问题 {
     public static int method(int[] weight, int[] val) {
 
         int[][] dp = new int[weight.length + 1][val.length + 1];
-
         //第一个元素是重量,
         dp[0][0] = 0;
         for (int i = 0; i <= weight.length; i++) {

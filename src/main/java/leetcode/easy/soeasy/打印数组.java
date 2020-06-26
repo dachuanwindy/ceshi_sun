@@ -28,11 +28,14 @@ public class 打印数组 {
      */
     public static int[] method(int[][] matrix) {
 
-        int row = matrix.length;
         //行
-        int column = matrix[0].length;
+        int row = matrix.length;
         //列
+        int column = matrix[0].length;
+
+        //输出结果
         int arr[] = new int[row * column - 1];
+
         //列管理
         int left = 0;
         int right = column - 1;
