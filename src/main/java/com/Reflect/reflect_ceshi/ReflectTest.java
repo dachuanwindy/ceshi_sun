@@ -1,8 +1,10 @@
 package com.Reflect.reflect_ceshi;
 
+import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.concurrent.*;
 
 /**
  * @author sunfch
@@ -13,7 +15,7 @@ public class ReflectTest {
 
     public static void main(String[] args) {
 //        replaceword();
-        System.out.println(ceshi("students. am i"));
+        // System.out.println(ceshi("students. am i"));
     }
 
     public static void replaceword() {
@@ -48,16 +50,24 @@ public class ReflectTest {
     }
 
 
-    public static String ceshi(String str) {
+    public static String ceshi(String str) throws FileNotFoundException {
+
+        CountDownLatch countDownLatch = new CountDownLatch(3);
+
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(5);
+
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(""));
 
 
+        //自己定义线程池
+        ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(5, 5, 5L, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(10));
 
-        String[] arry = str.split(" ");
+        String[] _arry = str.split(" ");
         String result = "";
 
-        for (int i = arry.length-1; i >= 0; i--) {
+        for (int i = _arry.length - 1; i >= 0; i--) {
             String.valueOf(str.charAt(i)).equals(" ");
-            result = result + arry[i]+" ";
+            result = result + _arry[i] + " ";
         }
         return result;
     }

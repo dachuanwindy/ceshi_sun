@@ -1,7 +1,8 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import DTO.User;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.Socket;
 import java.security.SecureRandom;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -56,30 +57,39 @@ class B {
 
 
     public static void main(String[] args) {
-        String[] cmd = {"/bin/sh", "-c", "ll "};
-        InputStream in = null;
-        String result = null;
-        try {
-            Process pro = Runtime.getRuntime().exec(cmd);
-            pro.waitFor();
-            in = pro.getInputStream();
+//        String[] cmd = {"/bin/sh", "-c", "ll "};
+//        InputStream in = null;
+//        String result = null;
+//        try {
+//            Process pro = Runtime.getRuntime().exec(cmd);
+//            pro.waitFor();
+//            in = pro.getInputStream();
+//
+//            BufferedReader read = new BufferedReader(new InputStreamReader(in));
+//            while ((result = read.readLine()) != null) {
+//                System.out.println(result);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
-            BufferedReader read = new BufferedReader(new InputStreamReader(in));
-            while ((result = read.readLine()) != null) {
-                System.out.println(result);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("ddddd");
+        stringBuilder.append("ewew");
+        stringBuilder.append("bac");
+        StringBuilder reverse = stringBuilder.reverse();
+        System.out.println(reverse);
+
 
     }
 }
 
 class test {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException, InstantiationException, InvocationTargetException, NoSuchMethodException {
 
         ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
         readWriteLock.writeLock();
@@ -90,7 +100,16 @@ class test {
         BlockingQueue blockingQueue = new ArrayBlockingQueue(10);
 
         LinkedBlockingDeque<Object> objects = new LinkedBlockingDeque<>();
+        Socket socket = new Socket();
 
+
+        Class clazz = null;
+        clazz = User.class;
+        Class[] ptype = new Class[]{String.class};
+        Method method = clazz.getMethod("getName", ptype);
+
+        Object invoke = method.invoke(clazz.newInstance(), "dfdfdf");
+        System.out.println(invoke.toString());
 
     }
 }

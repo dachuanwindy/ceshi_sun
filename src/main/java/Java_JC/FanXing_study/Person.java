@@ -3,8 +3,12 @@ package Java_JC.FanXing_study;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 
-public class Person  <T>{
+public class Person<T> {
 
     public Person() {
     }
@@ -64,7 +68,6 @@ class reflect_demo {
             Class clazz = Class.forName("Java_JC.FanXing_study.Person");
 
 
-
             //获取方法
             Method[] methods = clazz.getMethods();
             for (Method m : methods) {
@@ -112,5 +115,10 @@ class Test_main {
         } catch (InstantiationException e) {
             e.printStackTrace();
         }
+
+        List<Object> objects = Collections.unmodifiableList(new ArrayList<>());
+
+        HashMap<Object, Object> objectObjectHashMap = new HashMap<>();
+        objectObjectHashMap.put("", "");
     }
 }

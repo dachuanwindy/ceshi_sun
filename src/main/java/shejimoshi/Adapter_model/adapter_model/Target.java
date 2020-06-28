@@ -7,5 +7,5 @@ package shejimoshi.Adapter_model.adapter_model;
  **/
 public interface Target {
     //将220V转110v
-    public void converTo_110V();
+     void converTo_110V();
 }

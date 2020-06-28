@@ -46,10 +46,7 @@ class A implements Runnable {
 
     @Override
     public void run() {
-
         System.out.println("这个我应该是输出  3");
-
-
     }
 }
 
@@ -85,11 +82,9 @@ class Treemap_study {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-
                     try {
                         System.out.println("现在是后半段线程执行" + Thread.currentThread().getName() + "====" + Thread.currentThread().getId() + "  >>>>>>  " + Thread.currentThread().getState());
                         countDownLatch.await();
-
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -97,8 +92,6 @@ class Treemap_study {
                 }
             }).start();
         }
-
-
         System.out.println("线程结束。。。。。");
 
     }
