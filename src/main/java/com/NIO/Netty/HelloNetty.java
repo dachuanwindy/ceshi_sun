@@ -38,7 +38,6 @@ class NettyServer {
 
         try {
             ChannelFuture f = b.bind(port).sync();
-
             f.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();

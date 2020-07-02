@@ -22,25 +22,32 @@ public class 给定一个特定的值将链表左右分开 {
 
         ListNode partition = partition(listNode, 7);
 
-        System.out.println("partion=="+partition);
+        System.out.println("partion==" + partition);
 
 
     }
 
+    /**
+     * @description: 实现思路:实现思路就 申请两个链表, 分别进行存放值,最后合并
+     * @author sunfch
+     * @date 2020/6/30 07:16
+     */
     public static ListNode partition(ListNode head, int x) {
 
+        // 申请前一个链表
         ListNode before_head = new ListNode(0);
         ListNode before = before_head;
 
+        //申请后一个链表
         ListNode after_head = new ListNode(0);
-
         ListNode after = after_head;
-
         while (head != null) {
+            //前一个链表放入值
             if (head.val < x) {
                 before.next = head;
                 before = before.next;
             } else {
+                //后一个链表放入值
                 after.next = head;
                 after = after.next;
             }
@@ -49,7 +56,6 @@ public class 给定一个特定的值将链表左右分开 {
 
         after.next = null;
         before.next = after_head.next;
-
         return before_head.next;
     }
 }

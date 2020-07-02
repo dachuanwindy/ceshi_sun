@@ -34,15 +34,22 @@ public class 硬币问题 {
         System.out.println(i);
     }
 
+    /**
+     * @description: 种类替换与前面的状态有关.
+     * @author sunfch
+     * @date 2020/6/30 07:37
+     */
     public static int waysToChange(int n) {
 
-        // 4 中情况
-        int[] coins = {1, 5,10, 20, 25};
+        // 硬币的种类. 这个就相当于台阶
+        int[] coins = {1, 5, 10, 20, 25};
         int[] dp = new int[n + 1];
         dp[0] = 1;
-
+        // 外层是种类个数
         for (int i = 0; i < coins.length; i++) {
+            //遍历内层金钱,能否换成更大的种类钱
             for (int j = coins[i]; j <= n; j++) {
+                //当金币=1, 所有钱都是一种换法,就是1 ,当金币=5 的时候, 前面n=4 就都有一种换法,之后
                 dp[j] = dp[j] + dp[j - coins[i]];
             }
         }
@@ -53,7 +60,4 @@ public class 硬币问题 {
 
 /**
  * 第
- *
- *
- *
  */

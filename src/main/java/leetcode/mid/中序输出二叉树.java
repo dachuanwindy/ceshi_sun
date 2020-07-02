@@ -22,6 +22,11 @@ public class 中序输出二叉树 {
 
     static List<Integer> result = new ArrayList<>();
 
+    /**
+     * @description: 中序输出二叉树
+     * @author sunfch
+     * @date 2020/6/30 12:01
+     */
     public static List<Integer> inorderTraversal(TreeNode root) {
         if (root == null) {
             return result;

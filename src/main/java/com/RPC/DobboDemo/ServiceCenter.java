@@ -66,14 +66,13 @@ public class ServiceCenter implements Server {
 
     @Override
     public boolean isRunning() {
-         return isRunning;
+        return isRunning;
     }
 
     @Override
     public int getPort() {
         return port;
     }
-
 
     // 实现
     private static class ServiceTask implements Runnable {
@@ -94,6 +93,7 @@ public class ServiceCenter implements Server {
                 String methodName = input.readUTF();
                 Class<?>[] parameterTypes = (Class<?>[]) input.readObject();
                 Object[] arguments = (Object[]) input.readObject();
+                //接口监控,已经进入项目进程中了,肯定就能获得相应的字节码,及对象;
                 Class serviceClass = serviceRegistry.get(serviceName);
                 if (serviceClass == null) {
                     throw new ClassNotFoundException(serviceName + " not found");

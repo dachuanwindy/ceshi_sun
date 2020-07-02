@@ -1,9 +1,5 @@
 package leetcode.dayliy;
 
-import sun.nio.ch.DirectBuffer;
-
-import java.nio.ByteBuffer;
-
 /**
  * @author sunfch
  * @version V1.0
@@ -35,7 +31,7 @@ public class 水壶问题 {
     public static void main(String[] args) {
         System.out.println("水壶问题");
 
-        boolean b = canMeasureWater(2, 6, 5);
+        boolean b = canMeasureWater2(3, 4, 5);
         System.out.println(b);
     }
 
@@ -56,6 +52,15 @@ public class 水壶问题 {
     }
 
     public static boolean canMeasureWater2(int x, int y, int z) {
+
+        int mid = Math.abs(x - y);
+        if ((z % mid) == 0) {
+            return true;
+        }
+
+        if (z % x == 0 || z % y == 0) {
+            return true;
+        }
         return false;
     }
 

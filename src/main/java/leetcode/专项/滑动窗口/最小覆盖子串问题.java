@@ -40,7 +40,6 @@ public class 最小覆盖子串问题 {
      */
     public static String minWindow(String s, String t) {
 
-
         //源字符串;
         char[] chars = new char[s.length()];
         // 要验证的字符串

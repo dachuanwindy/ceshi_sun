@@ -1,4 +1,4 @@
-package leetcode.mid;
+package leetcode.专项.动态规划;
 
 /**
  * @author sunfch
@@ -6,7 +6,7 @@ package leetcode.mid;
  * @Description: 乘积最大子数组, 动态规划问题
  * @date 2020/6/16 18:31
  */
-public class 乘积最大子数组 {
+public class 最大子序列乘积 {
 
     public static void main(String[] args) {
         int[] ints = {1, 2, -3, 4, 5};
