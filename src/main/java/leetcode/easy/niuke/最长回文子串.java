@@ -85,6 +85,12 @@ public class 最长回文子串 {
         return str.substring(start, start + max).replaceAll("#", "");
     }
 
+
+    /**
+     * @description: 替换---解决奇数偶数问题
+     * @author sunfch
+     * @date 2020/7/2 11:21
+     */
     static String HuiWen(String str) {
 
         str = str.replace("", "#");
