@@ -1,8 +1,7 @@
 package leetcode.专项.滑动窗口;
 
-import org.apache.lucene.util.Bits;
-
 import java.util.HashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author sunfch
@@ -56,15 +55,28 @@ public class 最小覆盖子串问题 {
         int min = 0;
         for (int i = 0; i < chars.length; i++) {
             if (map.containsKey(chars[i])) {
-                min = Math.min(min, i-left);
+                min = Math.min(min, i - left);
                 left = Math.max(left, map.get(chars[i]) + 1);
             }
             map.put(chars[i], i);
 
         }
 
-
         return "";
+    }
+
+
+    /**
+     * @description: 官方解法
+     * @author sunfch
+     * @date 2020/7/5 09:21
+     */
+
+    private static volatile int a = 0;
+
+    public static int minWindows(String s, String t) {
+        ReentrantLock reentrantLock = new ReentrantLock();
+        return 0;
     }
 
 }

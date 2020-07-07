@@ -4,6 +4,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.Socket;
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -15,16 +17,10 @@ public class ceshi {
     ThreadLocal<String> threadLocal = new ThreadLocal<String>();
 
     public static void main(String[] args) {
-
-
-//       ExecutorService service= Executors.newWorkStealingPool(20);
-
         String s = String.valueOf(Math.abs(new SecureRandom().nextLong()));
         System.out.println("====" + s);
-
+        Object o = new Object();
     }
-
-
 }
 
 
@@ -57,31 +53,20 @@ class B {
 
 
     public static void main(String[] args) {
-//        String[] cmd = {"/bin/sh", "-c", "ll "};
-//        InputStream in = null;
-//        String result = null;
-//        try {
-//            Process pro = Runtime.getRuntime().exec(cmd);
-//            pro.waitFor();
-//            in = pro.getInputStream();
-//
-//            BufferedReader read = new BufferedReader(new InputStreamReader(in));
-//            while ((result = read.readLine()) != null) {
-//                System.out.println(result);
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+
+        ArrayList<String> list = new ArrayList<>();
 
 
+        list.add("sss");
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("ddddd");
         stringBuilder.append("ewew");
         stringBuilder.append("bac");
         StringBuilder reverse = stringBuilder.reverse();
         System.out.println(reverse);
+
+        HashMap<Object, Object> map = new HashMap<>();
+        boolean equals = map.equals("");
 
 
     }

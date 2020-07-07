@@ -1,5 +1,6 @@
 package Test_1.countdownLatch;
 
+import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -38,7 +39,7 @@ class Action implements Runnable {
     @Override
     public void run() {
 
-        try {
+         try {
             countDownLatch.await();
             System.out.println(name + "开始有动作了");
         } catch (InterruptedException e) {
