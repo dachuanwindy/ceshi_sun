@@ -28,18 +28,18 @@ public class 路径总和 {
         System.out.println("路径总和");
         TreeNode treeNode = new TreeNode(5);
         treeNode.left = new TreeNode(6);
-        boolean b = hasPathSum(treeNode, 1);
+        boolean b = hasPathSum(treeNode, 11);
         System.out.println(b);
     }
 
     /**
-     * @description:
+     * @description: 路径之和 ----> 这个明显用递归能做出来
      * @author sunfch
      * @date 2020/7/7 19:09
      */
     public static boolean hasPathSum(TreeNode root, int sum) {
-        if (root == null && sum == 0) {
-            return true;
+        if (root == null) {
+            return false;
         }
         if (root.right == null && root.left == null) {
             if (root.val == sum) {
@@ -47,12 +47,17 @@ public class 路径总和 {
             }
             return false;
         }
-        if (root.left != null) {
-            return hasPathSum(root.left, sum - root.val);
-        }
-        if (root.right != null) {
-            return hasPathSum(root.right, sum - root.val);
-        }
+        return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
+    }
+
+
+    /**
+     * @description: 采用for循环的方式实现
+     * @author sunfch
+     * @date 2020/7/10 10:13
+     */
+    public static boolean method3(TreeNode root, int sum) {
+
         return false;
     }
 }

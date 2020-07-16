@@ -15,7 +15,7 @@ import java.util.Set;
  * @author sunfch
  * @version V1.0
  * @Description: NIO 具体实现
- *
+ * <p>
  * Reactor模型: 当来个一个连接 : selector 选择器,把所有的channel 都注册到这个里面来,然后监听有数据的channel 然后处理,
  * @date 2020/5/17 20:26
  */
@@ -34,32 +34,29 @@ public class NIOServerTest {
         socketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
         while (true) {
+            System.out.println("看看是怎么轮询的");
             int nReady = selector.select();
             Set<SelectionKey> keys = selector.selectedKeys();
             Iterator<SelectionKey> it = keys.iterator();
-
             while (it.hasNext()) {
                 SelectionKey key = it.next();
                 it.remove();
-
                 if (key.isAcceptable()) {
                     // 创建新的连接，并且把连接注册到selector上，而且，
                     // 声明这个channel只对读操作感兴趣。
                     SocketChannel s1 = socketChannel.accept();
                     ByteBuffer readBuff = ByteBuffer.allocate(1024);
                     s1.read(readBuff);
-
                     System.out.println("hhhhhhh=====HHHH" + readBuff);
-                   // socketChannel.register(s1,SelectionKey.OP_READ);
+                    // socketChannel.register(s1,SelectionKey.OP_READ);
                     String s = new String();
 
                 } else if (key.isReadable()) {
-
-
                     SocketChannel socketChannel2 = (SocketChannel) key.channel();
                     socketChannel2.read(ByteBuffer.wrap(bytes));
                     System.out.println("received : " + new String(bytes));
                     key.interestOps(SelectionKey.OP_WRITE);
+                    socketChannel2.close();
                 }
             }
         }

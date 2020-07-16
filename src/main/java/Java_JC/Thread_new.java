@@ -1,14 +1,14 @@
 package Java_JC;
 
-import org.apache.commons.collections.map.HashedMap;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class Thread_new {
 
-    public  static  int ianliang2= 12;
+    public static int ianliang2 = 12;
+
     public static void main(String[] args) throws InterruptedException {
 //   duoxianchengrenwu T1 =new duoxianchengrenwu();
 //   duoxianchengrenwu T2 =new duoxianchengrenwu();
@@ -26,18 +26,16 @@ public class Thread_new {
       o.hashCode();
     boolean ff=  o.equals("485".toString());*/
 
-   // o.notify();
-        String  S ="qwertyuiop";
+        // o.notify();
+        String S = "qwertyuiop";
 
-       System.out.println(S.replace("yu","sunsunsusn"));
-
+        System.out.println(S.replace("yu", "sunsunsusn"));
 
 
 
     }
 
     class duoxianchengrenwu extends Thread {
-
 
         public duoxianchengrenwu() {
         }
@@ -116,6 +114,14 @@ class ceshi7 {
         System.out.println("开始买火车了 ceshi6");
     }
 
+
+    void method() {
+
+        ThreadLocal<String> threadLocal = new ThreadLocal<>();
+        threadLocal.get();
+        threadLocal.set("");
+    }
+
 }
 
 class Rocket {
@@ -123,16 +129,18 @@ class Rocket {
     Rocket() {
         System.out.println("火箭");
     }
-    Rocket(int j){
-        System.out.println("火箭+"+j);
+
+    Rocket(int j) {
+        System.out.println("火箭+" + j);
     }
 }
 
-class leaf{
-    int i=0;
-    leaf ddsd(){
+class leaf {
+    int i = 0;
+
+    leaf ddsd() {
         i++;
-        return  this;
+        return this;
 
     }
 }

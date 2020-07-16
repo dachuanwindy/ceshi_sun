@@ -20,6 +20,11 @@ public class ceshi {
         String s = String.valueOf(Math.abs(new SecureRandom().nextLong()));
         System.out.println("====" + s);
         Object o = new Object();
+
+        ThreadLocal threadLocal =new ThreadLocal();
+        threadLocal.set("");
+
+        threadLocal.get();
     }
 }
 

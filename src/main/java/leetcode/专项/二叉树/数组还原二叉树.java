@@ -1,6 +1,9 @@
 package leetcode.专项.二叉树;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author sunfch
  * @version V1.0
@@ -13,7 +16,18 @@ public class 数组还原二叉树 {
     public static void main(String[] args) {
         System.out.println("输出参数====");
 
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9,10};
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        int[] pre = {3, 9, 20, 15, 7};
+        int[] inorder = {9, 3, 15, 20, 7};
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < inorder.length; i++) {
+            map.put(inorder[i], i);
+        }
+
+        TreeNode treeNode = buildTree(pre, 0, pre.length - 1, inorder, 0, inorder.length - 1, map);
+        System.out.println(treeNode);
     }
 
     /**
@@ -25,21 +39,19 @@ public class 数组还原二叉树 {
      * 二叉树 前序遍历:===={根 [左]||界限||[右边]}
      * 二叉树 中序遍历:==== [左]||中||[右边]
      */
-    public static TreeNode buildTree(int[] pre, int pre_start, int pre_end, int[] inner, int inner_start, int inner_end) {
-        if (pre_start == pre_end) {
+    public static TreeNode buildTree(int[] pre, int pre_start, int pre_end, int[] inner, int inner_start, int inner_end, Map<Integer, Integer> map) {
+        if (pre_start > pre_end) {
             return null;
         }
         int rootValue = pre[pre_start];
         TreeNode root = new TreeNode(rootValue);
-        // 找到中间值
-        int mid_index = 0;
-        for (int i = 0; i < inner.length; i++) {
-            if (rootValue == inner[i]) {
-                mid_index = i;
-            }
+        if (pre_start == pre_end) {
+            return root;
         }
-        root.left = buildTree(pre, pre_start + 1, pre_start + mid_index + 1, inner, inner_start, mid_index);
-        root.right = buildTree(pre, pre_start + mid_index + 1, pre_end, inner, mid_index, inner_end);
+        // 找到中间值
+        int mid_index = map.get(rootValue);
+        root.left = buildTree(pre, pre_start + 1, pre_start + mid_index + 1, inner, inner_start, mid_index, map);
+        root.right = buildTree(pre, pre_start + mid_index+1 , pre_end, inner, mid_index+1, inner_end, map);
         return root;
     }
 

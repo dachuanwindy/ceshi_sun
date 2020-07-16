@@ -4,10 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-autowire="byName">
 
-    <bean id="msg" class="com_3.StudentBean">
+    <bean id="msg" class="com.com_3.StudentBean">
         <property name="studentBean2" ref="studentbean22"></property>
     </bean>
-    <bean id="studentbean22" class="com_3.StudentBean2">
+    <bean id="studentbean22" class="com.com_3.StudentBean2">
         <property name="studentBean" ref="msg"></property>
     </bean>
     <!--    <bean id="messageService" class="com.javadoop.example.MessageServiceImpl"/>-->

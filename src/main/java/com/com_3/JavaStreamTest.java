@@ -1,4 +1,4 @@
-package com_3;
+package com.com_3;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

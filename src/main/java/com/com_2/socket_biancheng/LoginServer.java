@@ -1,4 +1,4 @@
-package com_2.socket_biancheng;
+package com.com_2.socket_biancheng;
 
 
 import java.io.BufferedReader;

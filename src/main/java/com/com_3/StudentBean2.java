@@ -1,4 +1,4 @@
-package com_3;
+package com.com_3;
 
 import com.google.common.annotations.VisibleForTesting;
 import lombok.Data;

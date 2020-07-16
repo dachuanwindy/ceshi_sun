@@ -1,4 +1,4 @@
-package com_2.Httpserver;
+package com.com_2.Httpserver;
 
 import java.io.BufferedReader;
 import java.io.IOException;

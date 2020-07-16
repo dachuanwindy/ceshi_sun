@@ -44,4 +44,13 @@ public class BlockqueueTest {
             return container.removeFirst();
         }
     }
+
+
+}
+
+
+class MyLoad extends ClassLoader {
+
+
+
 }

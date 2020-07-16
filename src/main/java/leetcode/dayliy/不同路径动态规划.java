@@ -11,8 +11,6 @@ public class 不同路径动态规划 {
     public static void main(String[] args) {
 
         int[][] arr = {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}};
-
-
         int method = method(3, 3);
         System.out.println(method);
     }

@@ -1,4 +1,4 @@
-package com_2.ThreadPool_test;
+package com.com_2.ThreadPool_test;
 
 import java.util.ArrayList;
 import java.util.List;

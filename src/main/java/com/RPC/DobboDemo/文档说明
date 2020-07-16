@@ -3,6 +3,6 @@ RPC 远程调用： https://www.cnblogs.com/codingexperience/p/5930752.html
 RPC充分使用了代理模式, proxy  采用了动态代理JDK动态代理, 必须是interface方式实现;
 
 客户端: 必须使用远端的IP + 端口号: 接口名字,方法名字;
-
+//----
 RPC 远程调用框架,
- 在 client端要
+在client端要

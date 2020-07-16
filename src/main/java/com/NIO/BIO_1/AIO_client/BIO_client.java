@@ -2,7 +2,11 @@ package com.NIO.BIO_1.AIO_client;
 
 
 import java.io.IOException;
+import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
 
 /**
  * @author sunfch
@@ -22,6 +26,42 @@ public class BIO_client {
         socket.getInputStream().read(bytes);
         System.out.println(new String(bytes));
         socket.close();
+
+    }
+
+
+}
+
+class serverTest {
+
+    public static void main(String[] args) throws IOException {
+        Server();
+    }
+
+    public static void Server() throws IOException {
+
+        ServerSocket socketServer = new ServerSocket(12345);
+
+        while (true) {
+            Socket accept = socketServer.accept();
+            System.out.println("就卡在这====");
+
+            byte[] bytes = new byte[1024];
+            int read = accept.getInputStream().read(bytes);
+            System.out.println(read);
+            System.out.println(new String(bytes));
+            accept.close();
+        }
+    }
+
+
+    public  static  void  serverNIO () throws IOException {
+
+
+        SocketChannel socketChannel = SocketChannel.open();
+
+
+
     }
 
 }

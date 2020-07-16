@@ -1,4 +1,4 @@
-package com_3;
+package com.com_3;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
