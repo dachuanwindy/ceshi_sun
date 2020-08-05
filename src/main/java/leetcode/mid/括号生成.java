@@ -114,8 +114,6 @@ public class 括号生成 {
      */
     public static List<String> gen(int n) {
         ArrayList<String> strings = new ArrayList<>();
-
-
         return strings;
 
     }

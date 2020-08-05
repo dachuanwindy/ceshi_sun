@@ -1,6 +1,7 @@
 package inspur.Thread_study.Threadpool_2;
 
 import java.util.ArrayList;
+import java.util.TreeSet;
 import java.util.concurrent.*;
 
 public class Thread_timer {
@@ -20,6 +21,13 @@ class threadpool_study {
 
     public void threadpool() {
 
+
+        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+        concurrentHashMap.get("");
+        concurrentHashMap.size();
+        String s = "";
+        s.equals("");
+
         ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
 
         newCachedThreadPool.execute(new Runnable() {
@@ -33,6 +41,10 @@ class threadpool_study {
 
     public void CopyOnWriteArrayList1() {
         CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList(new ArrayList());
+        copyOnWriteArrayList.add("dsss");
+
+        CopyOnWriteArraySet set = new CopyOnWriteArraySet(new TreeSet());
+        set.add("ddd");
 
         LinkedBlockingQueue linkedBlockingQueue = new LinkedBlockingQueue();
 

@@ -23,8 +23,6 @@ public class 中序遍历二叉树 {
         List<Integer> result = new ArrayList<>();
         method(treeNode, result);
         System.out.println(result.toString());
-
-
         // 迭代的方式实现
 
         method2(treeNode, result);

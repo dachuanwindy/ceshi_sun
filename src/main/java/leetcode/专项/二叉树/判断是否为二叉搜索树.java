@@ -32,7 +32,6 @@ public class 判断是否为二叉搜索树 {
      * @date 2020/7/15 16:27
      */
     public static boolean isBST(TreeNode root) {
-
         // 中序遍历输出,判断是否有序就可以;
         ArrayList<Integer> integers = new ArrayList<>();
         MidOut(root, integers);

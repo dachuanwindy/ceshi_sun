@@ -33,14 +33,37 @@ public class 三元素之和为k {
 
         //首先对数组进行排序
         Arrays.sort(nums);
-
-
         //双指针法求解问题
-
-
-
         return null;
 
+    }
+
+
+    /**
+     * @description: 最大子序列乘积
+     * @author sunfch
+     * @date 2020/7/25 12:02
+     */
+    public static int method(int[] arr) {
+
+        int[][] dp = new int[arr.length][2];
+        dp[0][0] = arr[0];
+        dp[0][1] = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                dp[i][0] = Math.min(arr[i], arr[i] * dp[i - 1][0]);
+                dp[i][1] = Math.max(arr[i], arr[i] * dp[i - 1][1]);
+            } else {
+                dp[i][0] = Math.min(arr[i], arr[i] * dp[i - 1][1]);
+                dp[i][1] = Math.max(arr[i], arr[i] * dp[i - 1][0]);
+            }
+        }
+        int maxVal = Integer.MIN_VALUE;
+        for (int i = 0; i < dp.length; i++) {
+            maxVal = Math.max(dp[i][1], maxVal);
+        }
+        return maxVal;
     }
 
 }

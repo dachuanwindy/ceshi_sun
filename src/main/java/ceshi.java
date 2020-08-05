@@ -1,14 +1,13 @@
 import DTO.User;
+import parquet.it.unimi.dsi.fastutil.Hash;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.Socket;
 import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.Map;
+import java.util.concurrent.*;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -21,7 +20,7 @@ public class ceshi {
         System.out.println("====" + s);
         Object o = new Object();
 
-        ThreadLocal threadLocal =new ThreadLocal();
+        ThreadLocal threadLocal = new ThreadLocal();
         threadLocal.set("");
 
         threadLocal.get();
@@ -57,23 +56,31 @@ class B {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        ArrayList<String> list = new ArrayList<>();
-
-
-        list.add("sss");
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("ddddd");
-        stringBuilder.append("ewew");
-        stringBuilder.append("bac");
-        StringBuilder reverse = stringBuilder.reverse();
-        System.out.println(reverse);
+        int n = 5;
+        int m = 5;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+            }
+        }
 
         HashMap<Object, Object> map = new HashMap<>();
-        boolean equals = map.equals("");
+
+        map.get("");
 
 
+        ThreadLocal threadLocal = new ThreadLocal();
+
+        threadLocal.get();
+
+        threadLocal.set("aaaaaa");
+        System.gc();
+
+        Thread.sleep(10000);
+        System.gc();
+        Object o = threadLocal.get();
+        System.out.println(o);
     }
 }
 
@@ -101,5 +108,11 @@ class test {
         Object invoke = method.invoke(clazz.newInstance(), "dfdfdf");
         System.out.println(invoke.toString());
 
+
+        ThreadPoolExecutor my = new ThreadPoolExecutor(5, 5, 5, TimeUnit.SECONDS, new ArrayBlockingQueue<>(10));
+
+        my.execute(() -> {
+            System.out.println("");
+        });
     }
 }

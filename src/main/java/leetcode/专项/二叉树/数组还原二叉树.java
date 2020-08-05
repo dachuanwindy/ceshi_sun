@@ -68,7 +68,7 @@ public class 数组还原二叉树 {
 }
 
 
-final class TreeNode {
+ final class TreeNode {
     int value;
     TreeNode left;
     TreeNode right;

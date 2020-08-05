@@ -47,4 +47,28 @@ public class 两数之和 {
     }
 
 
+    /**
+     * @description: 两数之和用双指针去做  这个必须是有序数组.
+     * @author sunfch  通过 简单;
+     * @date 2020/7/21 18:50
+     */
+    public static int[] twoSums(int[] arr, int target) {
+
+        int low = 0;
+        int high = arr.length - 1;
+        while (low < high) {
+
+            if (arr[low] + arr[high] == target) {
+                return new int[]{low + 1, high + 1};
+            }
+            if (arr[low] + arr[high] > target) {
+                high--;
+            } else {
+                low++;
+            }
+        }
+        return new int[]{-1, -1};
+    }
+
+
 }

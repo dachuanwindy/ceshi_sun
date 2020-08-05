@@ -35,6 +35,9 @@ public class TestMain {
             System.out.println(it2.next());
         }
 
+        ThreadLocal threadLocal= new ThreadLocal();
+        threadLocal.set("");
+
     }
 }
 

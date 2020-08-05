@@ -1,6 +1,7 @@
 package leetcode.专项.二叉树;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -13,6 +14,9 @@ import java.util.List;
  */
 public class 二叉树层序遍历 {
     public static void main(String[] args) {
+
+        HashMap<Object, Object> map = new HashMap<>();
+        map.put("","");
         System.out.println("层序遍历输出");
         TreeNode root = new TreeNode(3);
         root.left = new TreeNode(9);
@@ -26,6 +30,15 @@ public class 二叉树层序遍历 {
 
     }
 
+
+    /**
+     * @description: 层序遍历二叉树
+     * 技术总结:
+     * 1.层序遍历,就是一层一层的输出;怎么保证一层输出? 广度搜素---BSF---->技术是queue实现;
+     *
+     * @author sunfch
+     * @date 2020/7/25 22:51
+     */
     public static List<List<Integer>> levelOrderBottom(TreeNode root) {
 
         List<List<Integer>> list = new ArrayList<>();

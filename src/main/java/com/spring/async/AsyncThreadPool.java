@@ -2,6 +2,8 @@ package com.spring.async;
 
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.AsyncConfigurer;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -15,6 +17,9 @@ import java.util.concurrent.TimeUnit;
  * @Description: TODO
  * @date 2020/7/16 14:54
  */
+
+@Order(2)
+@Configuration
 public class AsyncThreadPool implements AsyncConfigurer {
     /**
      * The {@link Executor} instance to be used when processing async

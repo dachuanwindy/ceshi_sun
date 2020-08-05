@@ -1,14 +1,12 @@
-package leetcode.easy.经典面试题;
-
-import lombok.Data;
+package leetcode;
 
 /**
  * @author sunfch
  * @version V1.0
- * @Description: 二叉树
- * @date 2020/5/24 09:21
+ * @Description: 整个项目都使用这个树节点
+ * @date 2020/7/30 19:20
  */
-@Data
+
 public class TreeNode {
     int value;
     TreeNode left;
@@ -17,5 +15,4 @@ public class TreeNode {
     TreeNode(int value) {
         this.value = value;
     }
-
 }

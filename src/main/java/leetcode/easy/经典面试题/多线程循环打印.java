@@ -14,7 +14,7 @@ public class 多线程循环打印 {
 
     public static void main(String[] args) {
         System.out.println("哈哈哈哈");
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 10; i++) {
             new Thread(new A(a, "A", b), "线程1").start();
             new Thread(new A(b, "B", c), "线程2").start();
             new Thread(new A(c, "C", a), "线程3").start();
@@ -27,7 +27,6 @@ public class 多线程循环打印 {
     static class A implements Runnable {
         private Object object;
         private Object next;
-
         private String str;
 
         public A(Object o, String str, Object next) {
