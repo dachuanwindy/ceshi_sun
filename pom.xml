@@ -20,7 +20,7 @@
     <properties>
         <java.version>1.8</java.version><!-- jdk版本 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>4.12</junit.version><!-- 单元测试 -->
+        <junit.version>4.13.1</junit.version><!-- 单元测试 -->
         <jstl.version>1.2</jstl.version>
         <servlet.version>3.1.0</servlet.version>
         <spring.version>4.2.9.RELEASE</spring.version>
