@@ -28,7 +28,7 @@
         <commons-lang3.version>3.4</commons-lang3.version>
         <commons-net.version>3.3</commons-net.version>
         <slf4j.version>1.7.12</slf4j.version>
-        <logback.version>1.1.7</logback.version>
+        <logback.version>1.2.0</logback.version>
         <druid.version>1.0.23</druid.version>
         <h2.version>1.4.191</h2.version><!-- h2数据库 -->
         <mysql.version>5.1.30</mysql.version><!-- mysql driver -->
