@@ -13,7 +13,7 @@ public class Context {
         this.stratege = stratege;
     }
 
-    public void stratege() {
+    public void strategy() {
         this.stratege.entry();// 输出加密方式；
     }
 }

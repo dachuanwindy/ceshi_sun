@@ -123,7 +123,6 @@ public class KuaipaiDemo {
             while (a[i] < base && i < right) i++;
             while (base < a[j] && left < j) j--;
             if (i <= j) {
-
                 temp = a[i];
                 a[i] = a[j];
                 a[j] = temp;

@@ -1,7 +1,7 @@
 package shejimoshi.BuiderModel;
 
 /**
- * @author sunfch
+ * @author sunfch  这个是建造者
  * @create 2018-10-14 15:08
  * @desc 造人接口
  **/

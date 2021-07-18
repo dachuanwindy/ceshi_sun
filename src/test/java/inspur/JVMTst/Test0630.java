@@ -61,3 +61,11 @@ public class Test0630 {
         return result;
     }
 }
+
+class Test222 {
+
+    public static void main(String[] args) {
+        long value = 2 <<50 ;
+        System.out.println(value);
+    }
+}

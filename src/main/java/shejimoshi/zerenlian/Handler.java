@@ -17,6 +17,5 @@ public abstract class Handler {
         this.name = handlerName;
     }
 
-
     public abstract boolean process(LeaveRequest leaveRequest);
 }

@@ -8,7 +8,7 @@ package shejimoshi.StrategeModel.Stratege_model2;
 public class TestMain {
 
     public static void main(String[] args) {
-       Context context = new Context(new Md5());
-       context.stratege();
+        Context context = new Context(new Md5());
+        context.strategy();
     }
 }
