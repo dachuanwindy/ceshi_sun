@@ -21,7 +21,7 @@
         <junit.version>4.12</junit.version><!-- 单元测试 -->
         <jstl.version>1.2</jstl.version>
         <servlet.version>3.1.0</servlet.version>
-        <spring.version>4.2.9.RELEASE</spring.version>
+        <spring.version>5.2.21.RELEASE</spring.version>
         <commons-logging.version>1.2</commons-logging.version>
         <commons-fileupload.version>1.3.2</commons-fileupload.version>
         <commons-io.version>2.4</commons-io.version>
